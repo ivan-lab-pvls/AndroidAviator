@@ -27,9 +27,8 @@ Future<void> main() async {
   if (balance == null) {
     await prefs.setDouble("balance", 100);
   }
-  OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
-  OneSignal.Debug.setAlertLevel(OSLogLevel.none);
-  OneSignal.initialize("7b275d56-36a4-4610-ac44-b803b0f41ae0");
+  OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+  OneSignal.shared.setAppId("7b275d56-36a4-4610-ac44-b803b0f41ae0");
   runApp(const MainApp());
 }
 
